@@ -7,7 +7,7 @@ import retrofit2.http.Query
 /**
  * Created by Vikram on 2019-10-10.
  */
-interface ChuckNorrisApiInterface {
+interface ChuckNorrisApiService {
     @GET("jokes/random")
     suspend fun getRandomJoke(): Joke
 
