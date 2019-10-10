@@ -1,4 +1,4 @@
-package com.vikram.gdgkotlinsample.ui
+package com.vikram.gdgkotlinsample.ui.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
@@ -7,7 +7,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
-import com.vikram.gdgkotlinsample.BR
 
 /**
  * Created by Vikram on 2019-10-10.
