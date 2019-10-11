@@ -12,6 +12,7 @@ import kotlinx.coroutines.withContext
 object JokeRepository {
 
     private val service: ChuckNorrisApiService = ServiceProvider.jokeServiceObject
+    private var categoryCache:List<String>? = null
 
     /**
      * This function uses withContext to make sure that
@@ -21,9 +22,12 @@ object JokeRepository {
      *
      * @return @List<String>
      */
-    suspend fun getJokeCategories(): List<String> {
-        return withContext(Dispatchers.IO) {
-            service.getJokeCategories()
+    suspend fun getJokeCategories(): List<String>? {
+        return categoryCache ?: kotlin.run {
+            withContext(Dispatchers.IO) {
+                categoryCache = service.getJokeCategories()
+                categoryCache
+            }
         }
     }
 
