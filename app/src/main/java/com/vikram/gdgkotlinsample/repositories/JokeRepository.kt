@@ -49,7 +49,7 @@ object JokeRepository {
      * @param category - Category of joke
      * @return @Joke
      */
-    suspend fun getRandomJokeForCategory(category: String): Joke {
+    suspend fun getRandomJokeForCategory(category: String): Joke? {
         return withContext(Dispatchers.IO) {
             service.getRandomJokeOfCategory(category)
         }

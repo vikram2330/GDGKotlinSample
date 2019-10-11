@@ -37,6 +37,6 @@ class HomeViewModel : ViewModel() {
 }
 
 sealed class State
-object LoadingState : State() //since this does'nt have any param we can make it singleton
-object SuccessState : State()//since this does'nt have any param we can make it singleton
+object LoadingState : State() //since this doesn't have any param we can make it singleton
+object SuccessState : State()//since this doesn't have any param we can make it singleton
 class ErrorState(val errorMsg: String?) : State()

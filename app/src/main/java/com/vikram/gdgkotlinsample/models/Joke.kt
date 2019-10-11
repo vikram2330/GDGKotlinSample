@@ -9,7 +9,7 @@ data class Joke(
     val categories: List<String>,
     @SerializedName("created_at")
     val createdAt: String,
-    @SerializedName("created_at")
+    @SerializedName("icon_url")
     val iconUrl: String,
     val id: String,
     @SerializedName("updated_at")

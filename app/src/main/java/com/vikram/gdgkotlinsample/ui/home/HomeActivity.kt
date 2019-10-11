@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vikram.gdgkotlinsample.R
 import com.vikram.gdgkotlinsample.databinding.HomeActivityBinding
 import com.vikram.gdgkotlinsample.ui.base.BaseActivity
+import com.vikram.gdgkotlinsample.ui.joke.JokeActivity
 import com.vikram.gdgkotlinsample.viewmodel.ErrorState
 import com.vikram.gdgkotlinsample.viewmodel.HomeViewModel
 import com.vikram.gdgkotlinsample.viewmodel.LoadingState
@@ -56,7 +57,8 @@ class HomeActivity : BaseActivity<HomeActivityBinding, HomeViewModel>(),
         (adapter as JokeCategoriesAdapter).submitList(categories)
     }
 
-    override fun onItemSelected(position: Int, item: String) {
-
+    override fun onCategorySelected(position: Int, category: String) {
+        val intent = JokeActivity.getLaunchIntent(this, category)
+        startActivity(intent)
     }
 }
