@@ -7,6 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * Created by Vikram on 2019-10-10.
@@ -26,4 +27,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : ViewModel> : FragmentActiv
         viewModel = ViewModelProviders.of(this)[getViewModelClass()]
     }
 
+    protected fun showSnackBar(msg:String){
+        Snackbar.make(binding.root,msg,Snackbar.LENGTH_SHORT).show()
+    }
 }
