@@ -63,7 +63,7 @@ class JokeCategoriesAdapter(private val interactionListener: InteractionListener
 
         fun bind(item: String) = with(itemView) {
             itemView.setOnClickListener {
-                interactionListener?.onItemSelected(adapterPosition, item)
+                interactionListener?.onCategorySelected(adapterPosition, item)
             }
 
             (itemView.findViewById(R.id.txtCategory) as TextView).text = item
@@ -71,6 +71,6 @@ class JokeCategoriesAdapter(private val interactionListener: InteractionListener
     }
 
     interface InteractionListener {
-        fun onItemSelected(position: Int, item: String)
+        fun onCategorySelected(position: Int, category: String)
     }
 }
